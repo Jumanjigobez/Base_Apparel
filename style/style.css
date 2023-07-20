@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+    --Linear-Gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --Linear-Gradient-2: repeating-linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+body{
+    background: var(--Linear-Gradient-1), var(--Linear-Gradient-2);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: lighten
+}
+
+#header{
+    width: 200px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    grid-gap: 5rem;
+}
+
+/* Section_1 part */
+#section_1{
+    flex-basis: 1000px;
+    padding: 1rem 2rem;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+    padding-left: 8rem;
+}
+
+#section_1 .text_part{
+    margin-top: 2rem;
+}
+#section_1 .text_part h1{
+    text-transform: uppercase;
+    font-size: 4em;
+    letter-spacing: 0.5rem;
+    line-height: 4rem;
+    font-weight: 400;
+    
+}
+#section_1 .text_part h1 span{
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+}
+#section_1 .text_part p{
+    margin-top: 1rem;
+    color: var(--Desaturated-Red);
+    
+    line-height: 1.5rem;
+}
+
+/* form part */
+#section_1 .input_part form{
+    position: relative;
+}
+form input{
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--Dark-Grayish-Red);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.btn{
+    outline: none;
+    background: var(--Desaturated-Red);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 25px;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: -1%;
+    transition: all .2s linear;
+}
+.btn:hover{
+    box-shadow: inset 100px 10px 100px 1000px rgba(255,255,255,0.4), 
+                1px 10px 5px 2px rgba(0,0,0,0.4)
+    ;
+    border: none;
+}
+
+.btn img{
+    width: 10px;
+}
+
+.error_text{
+  display: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--Soft-Red);
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.error_icon{
+    display: none;
+    position: absolute;
+    top: 11%;
+    right: 25%;
+}
+input.active{
+    border: 1px solid var(--Soft-Red);    
+}
+#section_1 .coder_part{
+    margin-top: 2rem;
+    text-align: center;
+}
+#section_1 .coder_part small a{
+    text-decoration: none;
+    color: var(--Desaturated-Red);
+    transition: 0.2s linear;
+}
+#section_1 .coder_part small a:hover{
+    color: var(--Soft-Red);
+}
+/* Section_2 part*/
+#section_2{
+    background-image: url('../images/hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 1000px;
+    min-height: 100vh;
+    animation: fade 1s linear;
+}
+@keyframes fade{
+    0%{opacity: 0};
+    50%{opacity: 0.5};
+    100%{opacity: 1}
+}
+
+.mobile_img{
+    display: none;
+}
+/* Medium to smaller screen viewers */
+@media (max-width: 800px){
+    main{
+        display: block;
+        height: 100%;
+    }
+    #section_2{
+        display: none;
+    }
+    .mobile_img{
+        display: flex;
+        padding: 0;
+        width: 100%;
+    }
+    .mobile_img img{
+        width: 100%;
+    }
+    #section_1{
+        padding: 0;
+        min-height: 100%;
+        grid-gap: 0;
+    }
+
+    #section_1 .logo_part{
+        padding: 2rem;
+        padding-bottom: 0;
+    }
+    #section_1 .text_part{
+        text-align: center
+    }
+
+    #section_1 .text_part h1{
+        font-size: 3em;
+        padding: 1rem 2rem;
+    }
+    #section_1 .text_part p{
+        padding: 0 2rem;
+    }
+
+    #section_1 .input_part{
+        padding: 0 2rem;
+        padding-top: 2rem;
+    }
+    #section_1 .coder_part{
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+    }
+    
+}
